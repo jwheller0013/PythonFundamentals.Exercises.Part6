@@ -26,6 +26,7 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :return: An integer.
     """
     pass  # remove pass statement and implement me
+    return collection.count(instance)
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
