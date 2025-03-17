@@ -38,16 +38,28 @@ def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) ->
     pass  # remove pass statement and implement me
     #takes in 'temperatures' then dependant of input_unit_of_measurement converts to c/f/k
     #returns a tuple of tuples 'original temp' and 'converted temp'
-    tuple = ()
+
     if input_unit_of_measurement == "f":
-        # for i in temperatures:
-        #     fchange = (temperatures, convert_to_fahrenheit(temperatures))
-        #     tuple = list(tuple).append(fchange,)
-        pass
+        change = []
+        for i in temperatures:
+            change.append(convert_to_celsius(i))
+        changed_set = tuple(change)
+        result = zip(temperatures, changed_set)
     elif input_unit_of_measurement == "c":
+        change = []
+        for i in temperatures:
+            change.append(convert_to_fahrenheit(i))
+        changed_set = tuple(change)
+        result = zip(temperatures, changed_set)
         pass
     elif input_unit_of_measurement == "a":
+        change = []
+        for i in temperatures:
+            change.append(convert_to_kelvin(i))
+        changed_set = tuple(change)
+        result = zip(temperatures, changed_set)
         pass
+    return tuple(result)
 
 def convert_to_kelvin(fahrenheit_temp: float) -> float:
     kelvin = (fahrenheit_temp-32)/1.8 + 273.15
