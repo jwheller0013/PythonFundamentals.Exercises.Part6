@@ -39,4 +39,16 @@ class TemperatureUtilsTest(unittest.TestCase):
 
     def test3_temperature_tuple(self):
         temps_input = (1, 2, 3)
+        expected = ((1, 255.93), (2, 256.48), (3, 257.04))
         self.assertEqual(tuple(), temperature_utils.temperature_tuple(temps_input, "a"))
+
+    def test_convert_to_kelvin(self):
+        test_cases = [
+            (0, 255.37),
+            (1, 255.93),
+            (2, 256.48),
+            (3, 257.04)
+        ]
+        for temp_in, expected in test_cases:
+            with self.subTest(f"{temp_in} -> {expected}"):
+                self.assertEqual(expected, temperature_utils.convert_to_kelvin(temp_in))

@@ -9,7 +9,9 @@ def convert_to_celsius(fahrenheit_temp: float) -> float:
     :return: A float representing the corresponding value of the fahrenheit_temp parameter in celsius
     """
     pass  # remove pass statement and implement me
-
+    celsius = (5/9) * (fahrenheit_temp-32)
+    celsius = round(celsius, 2)
+    return float(celsius)
 
 def convert_to_fahrenheit(celsius_temp: float) -> int:
     """
@@ -19,7 +21,9 @@ def convert_to_fahrenheit(celsius_temp: float) -> int:
     :return:  A float representing the corresponding value of the celsius_temp parameter in fahrenheit
     """
     pass  # remove pass statement and implement me
-
+    fahrenheit = (celsius_temp * (9/5)) + 32
+    fahrenheit = round(fahrenheit, 2)
+    return int(fahrenheit)
 
 def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) -> Tuple[Tuple[float, float]]:
     """
@@ -32,3 +36,20 @@ def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) ->
     :return: A tuple of tuples
     """
     pass  # remove pass statement and implement me
+    #takes in 'temperatures' then dependant of input_unit_of_measurement converts to c/f/k
+    #returns a tuple of tuples 'original temp' and 'converted temp'
+    tuple = ()
+    if input_unit_of_measurement == "f":
+        # for i in temperatures:
+        #     fchange = (temperatures, convert_to_fahrenheit(temperatures))
+        #     tuple = list(tuple).append(fchange,)
+        pass
+    elif input_unit_of_measurement == "c":
+        pass
+    elif input_unit_of_measurement == "a":
+        pass
+
+def convert_to_kelvin(fahrenheit_temp: float) -> float:
+    kelvin = (fahrenheit_temp-32)/1.8 + 273.15
+    kelvin = round(kelvin, 2)
+    return float(kelvin)
